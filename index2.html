@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GCTalk | Entrar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="login-card">
+      <h1>GCTalk</h1>
+      <p class="subtitle">Compartilhe sua experiência do ano letivo</p>
+
+      <div class="tabs">
+        <button class="tab active" id="tab-login">Entrar</button>
+        <button class="tab" id="tab-register">Cadastrar</button>
+      </div>
+
+      <!-- Formulário de login -->
+      <form id="form-login" class="active">
+        <label for="email">E-mail</label>
+        <input type="email" id="email" placeholder="seu@email.com" required>
+
+        <label for="password">Senha</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+
+        <button type="submit" class="btn">Entrar</button>
+      </form>
+
+      <!-- Formulário de cadastro -->
+      <form id="form-register">
+        <label for="username">Nome de usuário</label>
+        <input type="text" id="username" placeholder="seu nome de usuário" required>
+
+        <label for="email-register">E-mail</label>
+        <input type="email" id="email-register" placeholder="seu@email.com" required>
+
+        <label for="password-register">Senha</label>
+        <input type="password" id="password-register" placeholder="crie uma senha" required>
+
+        <label for="confirm-password">Confirmar senha</label>
+        <input type="password" id="confirm-password" placeholder="repita a senha" required>
+
+        <button type="submit" class="btn">Criar conta</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Seleção das abas e formulários
+    const tabLogin = document.getElementById('tab-login');
+    const tabRegister = document.getElementById('tab-register');
+    const formLogin = document.getElementById('form-login');
+    const formRegister = document.getElementById('form-register');
+
+    // Evento para trocar para o formulário de login
+    tabLogin.addEventListener('click', () => {
+      tabLogin.classList.add('active');
+      tabRegister.classList.remove('active');
+      formLogin.classList.add('active');
+      formRegister.classList.remove('active');
+    });
+
+    // Evento para trocar para o formulário de cadastro
+    tabRegister.addEventListener('click', () => {
+      tabRegister.classList.add('active');
+      tabLogin.classList.remove('active');
+      formRegister.classList.add('active');
+      formLogin.classList.remove('active');
+    });
+  </script>
+</body>
+</html>
